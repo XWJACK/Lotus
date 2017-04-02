@@ -1,15 +1,15 @@
 //
-//  RequestTests.swift
-//  RequestTests
+//  LotusTests.swift
+//  LotusTests
 //
 //  Created by Jack on 4/2/17.
 //
 //
 
 import XCTest
-@testable import Request
+@testable import Lotus
 
-class RequestTests: XCTestCase {
+class LotusTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

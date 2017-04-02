@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Request.xcodeproj">
+      location = "self:/Users/Jack/Documents/Development/Personal/Framework/Swift/Request/Lotus.xcodeproj">
    </FileRef>
 </Workspace>
