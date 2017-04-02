@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041757571E913552003769FA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041757561E913552003769FA /* Client.swift */; };
+		041757581E913552003769FA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041757561E913552003769FA /* Client.swift */; };
 		04EB21AE1E90F12900B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21A41E90F12800B6BE14 /* Lotus.framework */; };
 		04EB21CA1E90F14D00B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21C11E90F14D00B6BE14 /* Lotus.framework */; };
 		04EB21E21E90F1CA00B6BE14 /* Lotus.h in Headers */ = {isa = PBXBuildFile; fileRef = 04EB21E01E90F1B300B6BE14 /* Lotus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041757561E913552003769FA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		04EB21A41E90F12800B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21AD1E90F12900B6BE14 /* Lotus iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lotus iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21C11E90F14D00B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +86,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041757591E913602003769FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		04EB21981E90F0FC00B6BE14 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			children = (
 				04EB21EE1E91344B00B6BE14 /* Lotus.swift */,
 				04EB21E81E91206000B6BE14 /* Core */,
+				041757591E913602003769FA /* Extension */,
 				04EB21DE1E90F18F00B6BE14 /* Supporting Files */,
 			);
 			path = Sources;
@@ -143,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				04EB21E91E91208300B6BE14 /* Request.swift */,
+				041757561E913552003769FA /* Client.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 			files = (
 				04EB21EA1E91208300B6BE14 /* Request.swift in Sources */,
 				04EB21EF1E91344B00B6BE14 /* Lotus.swift in Sources */,
+				041757571E913552003769FA /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +362,7 @@
 			files = (
 				04EB21EB1E91208300B6BE14 /* Request.swift in Sources */,
 				04EB21F01E91344B00B6BE14 /* Lotus.swift in Sources */,
+				041757581E913552003769FA /* Client.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
