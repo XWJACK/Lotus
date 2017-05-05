@@ -7,21 +7,12 @@
 //
 
 import Foundation
+import Alamofire
 
-open class Client<Request, Response> {
-    
-    public var request: URLRequest?
-    public var response: HTTPURLResponse?
-    
-    func success() -> Self {
-        return self
-    }
-    
-    func failure() -> Self {
-        return self
-    }
-    
-    func then() -> Self {
-        return self
-    }
+protocol Clientable {
+    static func request(method: HTTPMethod)
+}
+
+protocol GET {
+    static func get(params: HTTPHeaders)
 }

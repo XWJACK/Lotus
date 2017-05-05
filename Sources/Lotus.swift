@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+typealias JSON = SwiftyJSON.JSON
+typealias HTTPMethod = Alamofire.HTTPMethod
