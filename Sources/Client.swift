@@ -62,7 +62,7 @@ open class Client {
     }
     
     @discardableResult
-    public func receive(_ queue: DispatchQueue = .main, failed block: (ClientResponseBlock)? = nil) -> Self {
+    public func receive(_ queue: DispatchQueue = .main, response block: (ClientResponseBlock)? = nil) -> Self {
         self.responseCallBack = (queue, block)
         return self
     }
