@@ -37,31 +37,37 @@ open class Client {
         self.task = task
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, success block: (ClientSuccessBlock)? = nil) -> Self {
         self.successCallBack = (queue, block)
         return self
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, data block: (ClientDataBlock)? = nil) -> Self {
         self.dataCallBack = (queue, block)
         return self
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, progress block: (ClientProgressBlock)? = nil) -> Self {
         self.progressCallBack = (queue, block)
         return self
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, failed block: (ClientFailedBlock)? = nil) -> Self {
         self.failedCallBack = (queue, block)
         return self
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, failed block: (ClientResponseBlock)? = nil) -> Self {
         self.responseCallBack = (queue, block)
         return self
     }
     
+    @discardableResult
     public func receive(_ queue: DispatchQueue = .main, download block: (ClientDownloadBlock)? = nil) -> Self {
         self.downloadCallBack = (queue, block)
         return self
