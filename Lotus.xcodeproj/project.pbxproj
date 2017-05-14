@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047CEBC41EC83C440077ECC8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC31EC83C440077ECC8 /* Session.swift */; };
+		047CEBC51EC83C440077ECC8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC31EC83C440077ECC8 /* Session.swift */; };
+		047CEBC71EC87D990077ECC8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC61EC87D990077ECC8 /* Client.swift */; };
+		047CEBC81EC87D990077ECC8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC61EC87D990077ECC8 /* Client.swift */; };
+		047CEBCA1EC87ED00077ECC8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC91EC87ED00077ECC8 /* SessionDelegate.swift */; };
+		047CEBCB1EC87ED00077ECC8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC91EC87ED00077ECC8 /* SessionDelegate.swift */; };
 		04EB21AE1E90F12900B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21A41E90F12800B6BE14 /* Lotus.framework */; };
 		04EB21CA1E90F14D00B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21C11E90F14D00B6BE14 /* Lotus.framework */; };
 		04EB21E21E90F1CA00B6BE14 /* Lotus.h in Headers */ = {isa = PBXBuildFile; fileRef = 04EB21E01E90F1B300B6BE14 /* Lotus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047CEBC31EC83C440077ECC8 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		047CEBC61EC87D990077ECC8 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		047CEBC91EC87ED00077ECC8 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 		04EB21A41E90F12800B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21AD1E90F12900B6BE14 /* Lotus iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lotus iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21C11E90F14D00B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +148,9 @@
 		04EB21E81E91206000B6BE14 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				047CEBC31EC83C440077ECC8 /* Session.swift */,
+				047CEBC61EC87D990077ECC8 /* Client.swift */,
+				047CEBC91EC87ED00077ECC8 /* SessionDelegate.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -326,7 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047CEBC41EC83C440077ECC8 /* Session.swift in Sources */,
 				04EB21EF1E91344B00B6BE14 /* Lotus.swift in Sources */,
+				047CEBC71EC87D990077ECC8 /* Client.swift in Sources */,
+				047CEBCA1EC87ED00077ECC8 /* SessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047CEBC51EC83C440077ECC8 /* Session.swift in Sources */,
 				04EB21F01E91344B00B6BE14 /* Lotus.swift in Sources */,
+				047CEBC81EC87D990077ECC8 /* Client.swift in Sources */,
+				047CEBCB1EC87ED00077ECC8 /* SessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,7 +690,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xwjack.Lotus;
@@ -733,7 +751,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xwjack.Lotus;
 				PRODUCT_NAME = Lotus;
