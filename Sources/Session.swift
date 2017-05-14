@@ -12,6 +12,8 @@ open class Session {
     
     static public let `default`: Session = Session()
     
+    public var globalFailBlock: ((Error) -> ())? = nil
+    
     open var timeOut: TimeInterval = 60
     open let session: URLSession
     open let delegateQueue = OperationQueue()
