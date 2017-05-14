@@ -43,6 +43,9 @@ class SessionDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadDeleg
         if let responseBlock = client.responseCallBack?.block {
             client.responseCallBack?.queue.async { responseBlock() }
         }
+        
+        /// Destory
+        self[task] = nil
     }
     
     //MARK - URLSessionDataDelegate
