@@ -12,7 +12,7 @@ open class Session {
     
     static public let `default`: Session = Session()
     
-    public var globalFailBlock: ((Error) -> ())? = nil
+    public var globalFailCallBack: (queue: DispatchQueue, block: ClientFailedBlock?) = (.global(qos: .background), nil)
     
     open var timeOut: TimeInterval = 60
     open let session: URLSession
@@ -46,6 +46,6 @@ open class Session {
         let client = Client(request, dataTask)
         delegate[dataTask] = client
         dataTask.resume()
-        return client
+        return client.receive(queue: globalFailCallBack.queue, failed: globalFailCallBack.block)
     }
 }

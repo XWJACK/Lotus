@@ -36,7 +36,7 @@ class SessionDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadDeleg
             client.failedCallBack?.queue.async { failedBlock(error) }
             
         } else if let successBlock = client.successCallBack?.block {
-            successBlock(client.data)
+            client.successCallBack?.queue.async { successBlock(client.data) }
         }
         
         /// Response
