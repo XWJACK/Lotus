@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Jack" => "xuwenjiejack@gmail.com" }
 
   s.ios.deployment_target  = "8.0"
+  s.osx.deployment_target = "10.9"
 
   s.source       = { :git => "https://github.com/XWJACK/Lotus.git", :tag => s.version }
 
