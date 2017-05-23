@@ -15,3 +15,11 @@ public func send(_ url: URL) -> Client {
 public func send(_ request: URLRequest) -> Client {
     return Session.default.send(request)
 }
+
+public func download(_ url: URL) -> Client {
+    return Session.default.download(url)
+}
+
+public func download(_ request: URLRequest) -> Client {
+    return Session.default.download(request)
+}

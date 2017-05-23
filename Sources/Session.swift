@@ -36,6 +36,8 @@ open class Session {
                              delegateQueue: delegateQueue)
     }
     
+    //MARK: - DataTask
+    
     public func send(_ url: URL) -> Client {
         let urlRequest = URLRequest(url: url, timeoutInterval: timeOut)
         return send(urlRequest)
@@ -46,6 +48,21 @@ open class Session {
         let client = Client(request, dataTask)
         delegate[dataTask] = client
         dataTask.resume()
+        return client.receive(queue: globalFailCallBack.queue, failed: globalFailCallBack.block)
+    }
+    
+    //MARK: - DownloadTask
+    
+    public func download(_ url: URL) -> Client {
+        let urlRequest = URLRequest(url: url, timeoutInterval: timeOut)
+        return download(urlRequest)
+    }
+    
+    public func download(_ request: URLRequest) -> Client {
+        let downloadTask = session.downloadTask(with: request)
+        let client = Client(request, downloadTask)
+        delegate[downloadTask] = client
+        downloadTask.resume()
         return client.receive(queue: globalFailCallBack.queue, failed: globalFailCallBack.block)
     }
 }
