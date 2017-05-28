@@ -8,18 +8,38 @@
 
 import Foundation
 
-public func send(_ url: URL) -> Client {
-    return Session.default.send(url)
+//MARK: - DataTask
+
+/// Send data task by url
+///
+/// - Parameter url: URL
+/// - Returns: DataClient
+public func send(_ url: URL) -> DataClient {
+    return Center.default.send(url)
 }
 
-public func send(_ request: URLRequest) -> Client {
-    return Session.default.send(request)
+/// Send data task by URLRequest
+///
+/// - Parameter request: URLRequest
+/// - Returns: DataClient
+public func send(_ request: URLRequest) -> DataClient {
+    return Center.default.send(request)
 }
 
-public func download(_ url: URL) -> Client {
-    return Session.default.download(url)
+//MARK: - DownloadTask
+
+/// Download by url
+///
+/// - Parameter url: URL
+/// - Returns: DownloadClient
+public func download(_ url: URL) -> DownloadClient {
+    return Center.default.download(url)
 }
 
-public func download(_ request: URLRequest) -> Client {
-    return Session.default.download(request)
+/// Download by URLRequest
+///
+/// - Parameter request: URLRequest
+/// - Returns: DownloadClient
+public func download(_ request: URLRequest) -> DownloadClient {
+    return Center.default.download(request)
 }
