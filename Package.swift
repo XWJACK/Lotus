@@ -11,5 +11,5 @@ import PackageDescription
 let package = Package(
     name: "Lotus",
     dependencies : [],
-    exclude: ["Demo", "Tests"]
+    exclude: ["Diagram", "Tests"]
 )
