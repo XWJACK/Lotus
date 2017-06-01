@@ -9,7 +9,7 @@
 
 ## Overview
 
-Simple stream audio player
+Simple way to access network
 
 ## Installation
 
