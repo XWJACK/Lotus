@@ -8,12 +8,18 @@
 
 import Foundation
 
+/// Center Delegate for URLSession
 open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadDelegate {
     
     private var requests: [Int: Client] = [:]
-    private let queue: DispatchQueue = DispatchQueue(label: "com.Lotus.CenterDelegate.Serial")
+    open let queue: DispatchQueue = DispatchQueue(label: "com.Lotus.CenterDelegate.Serial")
     
-    func set(_ client: Client?,
+    /// Set Client with task
+    ///
+    /// - Parameters:
+    ///   - client: Client
+    ///   - task: URLSessionTask
+    open func set(_ client: Client?,
              withTask task: URLSessionTask) {
         
         queue.async {
@@ -21,7 +27,12 @@ open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadD
         }
     }
     
-    private func get(_ task: URLSessionTask,
+    /// Get Client with task
+    ///
+    /// - Parameters:
+    ///   - task: URLSessionTask
+    ///   - clientBlock: Client block
+    open func get(_ task: URLSessionTask,
                      block clientBlock: @escaping (Client?) -> ()) {
         
         queue.async {
