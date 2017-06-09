@@ -33,6 +33,10 @@ open class Center {
                              delegateQueue: nil)
     }
     
+    deinit {
+        session.invalidateAndCancel()
+    }
+    
     //MARK: - DataTask
     
     /// Send data task by url
