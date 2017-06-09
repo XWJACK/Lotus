@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F1791D88B6A1F24625E38B14E2B1A5E96BCC2FB7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F1791D88B6A1F24625E38B14E2B1A5E96BCC2FB7" : 9223372036854775807,
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "66DE5CBA-FF5C-4CD4-8C70-CEB79764432F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F1791D88B6A1F24625E38B14E2B1A5E96BCC2FB7" : "Lotus\/",
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "Lotus\/.build\/checkouts\/SwiftyJSON-3802723480711899616\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "Lotus\/.build\/checkouts\/Alamofire.git-6801331143877184500\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Lotus",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Lotus.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/Jack\/Documents\/Development\/Personal\/Framework\/Swift\/Lotus\/.build\/repositories\/Alamofire.git-6801331143877184500",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/Jack\/Documents\/Development\/Personal\/Framework\/Swift\/Lotus\/.build\/repositories\/SwiftyJSON-3802723480711899616",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:XWJACK\/Lotus.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1791D88B6A1F24625E38B14E2B1A5E96BCC2FB7"
+    }
+  ]
+}
