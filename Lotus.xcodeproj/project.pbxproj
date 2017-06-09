@@ -13,8 +13,6 @@
 		047CEBC81EC87D990077ECC8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC61EC87D990077ECC8 /* Client.swift */; };
 		047CEBCA1EC87ED00077ECC8 /* CenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC91EC87ED00077ECC8 /* CenterDelegate.swift */; };
 		047CEBCB1EC87ED00077ECC8 /* CenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CEBC91EC87ED00077ECC8 /* CenterDelegate.swift */; };
-		04B32E851EDEB0C4006546BA /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B32E841EDEB0C4006546BA /* BaseTest.swift */; };
-		04B32E861EDEB0C4006546BA /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B32E841EDEB0C4006546BA /* BaseTest.swift */; };
 		04EB21AE1E90F12900B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21A41E90F12800B6BE14 /* Lotus.framework */; };
 		04EB21CA1E90F14D00B6BE14 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB21C11E90F14D00B6BE14 /* Lotus.framework */; };
 		04EB21E21E90F1CA00B6BE14 /* Lotus.h in Headers */ = {isa = PBXBuildFile; fileRef = 04EB21E01E90F1B300B6BE14 /* Lotus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,7 +42,6 @@
 		047CEBC31EC83C440077ECC8 /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		047CEBC61EC87D990077ECC8 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		047CEBC91EC87ED00077ECC8 /* CenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterDelegate.swift; sourceTree = "<group>"; };
-		04B32E841EDEB0C4006546BA /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		04EB21A41E90F12800B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21AD1E90F12900B6BE14 /* Lotus iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lotus iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EB21C11E90F14D00B6BE14 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +89,6 @@
 		04B32E831EDEB093006546BA /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				04B32E841EDEB0C4006546BA /* BaseTest.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -357,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B32E851EDEB0C4006546BA /* BaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B32E861EDEB0C4006546BA /* BaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
