@@ -55,7 +55,7 @@ open class Center {
     public func send(_ request: URLRequest) -> DataClient {
         let dataTask = session.dataTask(with: request)
         let client = DataClient(request, dataTask)
-        delegate.set(client, withTask: dataTask)
+        delegate[dataTask] = client
         dataTask.resume()
         return client.receive(queue: globalFailCallBack.queue, failed: globalFailCallBack.block)
     }
@@ -78,7 +78,7 @@ open class Center {
     public func download(_ request: URLRequest) -> DownloadClient {
         let downloadTask = session.downloadTask(with: request)
         let client = DownloadClient(request, downloadTask)
-        delegate.set(client, withTask: downloadTask)
+        delegate[downloadTask] = client
         downloadTask.resume()
         return client.receive(queue: globalFailCallBack.queue, failed: globalFailCallBack.block)
     }

@@ -12,31 +12,17 @@ import Foundation
 open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadDelegate {
     
     private var requests: [Int: Client] = [:]
-    open let queue: DispatchQueue = DispatchQueue(label: "com.Lotus.CenterDelegate.Serial")
+    private let lock = NSLock()
     
-    /// Set Client with task
-    ///
-    /// - Parameters:
-    ///   - client: Client
-    ///   - task: URLSessionTask
-    open func set(_ client: Client?,
-             withTask task: URLSessionTask) {
-        
-        queue.async {
-            self.requests[task.taskIdentifier] = client
+    /// Access the task delegate for the specified task in a thread-safe manner.
+    open subscript(task: URLSessionTask) -> Client? {
+        get {
+            lock.lock() ; defer { lock.unlock() }
+            return requests[task.taskIdentifier]
         }
-    }
-    
-    /// Get Client with task
-    ///
-    /// - Parameters:
-    ///   - task: URLSessionTask
-    ///   - clientBlock: Client block
-    open func get(_ task: URLSessionTask,
-                     block clientBlock: @escaping (Client?) -> ()) {
-        
-        queue.async {
-            clientBlock(self.requests[task.taskIdentifier])
+        set {
+            lock.lock() ; defer { lock.unlock() }
+            requests[task.taskIdentifier] = newValue
         }
     }
     
@@ -46,70 +32,61 @@ open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadD
                     task: URLSessionTask,
                     didCompleteWithError error: Error?) {
         
-        get(task) { (client) in
-            guard let client = client else { return }
-            
-            /// Failed
-            if let error = error,
-                let failedBlock = client.failedCallBack?.block {
-                
-                client.failedCallBack?.queue.async { failedBlock(error) }
-            } else if let successBlock = client.successCallBack?.block {
-                client.successCallBack?.queue.async { successBlock(client.data) }
-            }
-            
-            /// Response
-            if let responseBlock = client.responseCallBack?.block {
-                client.responseCallBack?.queue.async { responseBlock() }
-            }
+        guard let client = self[task] else { return }
+        
+        /// Failed
+        if let error = error,
+            let failedBlock = client.failedCallBack?.block {
+            client.failedCallBack?.queue.async { failedBlock(error) }
+        } else if let successBlock = client.successCallBack?.block {
+            client.successCallBack?.queue.async { successBlock(client.data) }
         }
         
+        /// Response
+        if let responseBlock = client.responseCallBack?.block {
+            client.responseCallBack?.queue.async { responseBlock() }
+        }
         
-        /// Destory
-        set(nil, withTask: task)
+        self[task] = nil
     }
     
-    //MARK - URLSessionDataDelegate
+    //MARK: - URLSessionDataDelegate
     
     open func urlSession(_ session: URLSession,
                     dataTask: URLSessionDataTask,
                     didReceive data: Data) {
         
-        get(dataTask) { (client) in
-            guard let client = client as? DataClient else { return }
+        guard let client = self[dataTask] as? DataClient else { return }
+        
+        client.data.append(data)
+        
+        /// Data Response
+        if let dataBlock = client.dataCallBack?.block {
+            client.dataCallBack?.queue.async { dataBlock(data) }
+        }
+        
+        /// Progress Block
+        if let progressBlock = client.progressCallBack?.block {
             
-            client.data.append(data)
+            let totalBytesExpected = dataTask.response?.expectedContentLength ?? NSURLSessionTransferSizeUnknown
+            let progress = Progress(totalUnitCount: totalBytesExpected)
+            progress.completedUnitCount = Int64(client.data.count)
             
-            /// Data Response
-            if let dataBlock = client.dataCallBack?.block {
-                client.dataCallBack?.queue.async { dataBlock(data) }
-            }
-            
-            /// Progress Block
-            if let progressBlock = client.progressCallBack?.block {
-                
-                let totalBytesExpected = dataTask.response?.expectedContentLength ?? NSURLSessionTransferSizeUnknown
-                let progress = Progress(totalUnitCount: totalBytesExpected)
-                progress.completedUnitCount = Int64(client.data.count)
-                
-                client.progressCallBack?.queue.async { progressBlock(progress) }
-            }
+            client.progressCallBack?.queue.async { progressBlock(progress) }
         }
     }
     
-    //MARK - URLSessionDownloadDelegate
+    //MARK: - URLSessionDownloadDelegate
     
     open func urlSession(_ session: URLSession,
                     downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL) {
         
-        get(downloadTask) { (client) in
-            guard let client = client as? DownloadClient else { return }
-            
-            /// Download Block
-            if let downloadBlock = client.downloadCallBack?.block {
-                client.downloadCallBack?.queue.async { downloadBlock(location) }
-            }
+        guard let client = self[downloadTask] as? DownloadClient else { return }
+        
+        /// Download Block
+        if let downloadBlock = client.downloadCallBack?.block {
+            client.downloadCallBack?.queue.async { downloadBlock(location) }
         }
     }
     
@@ -119,17 +96,15 @@ open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadD
                     totalBytesWritten: Int64,
                     totalBytesExpectedToWrite: Int64) {
         
-        get(downloadTask) { (client) in
-            guard let client = client else { return }
+        guard let client = self[downloadTask] else { return }
+        
+        /// Progress Block
+        if let progressBlock = client.progressCallBack?.block {
             
-            /// Progress Block
-            if let progressBlock = client.progressCallBack?.block {
-                
-                let progress = Progress(totalUnitCount: totalBytesExpectedToWrite)
-                progress.completedUnitCount = totalBytesWritten
-                
-                client.progressCallBack?.queue.async { progressBlock(progress) }
-            }
+            let progress = Progress(totalUnitCount: totalBytesExpectedToWrite)
+            progress.completedUnitCount = totalBytesWritten
+            
+            client.progressCallBack?.queue.async { progressBlock(progress) }
         }
     }
 }
