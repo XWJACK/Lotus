@@ -85,8 +85,8 @@ open class CenterDelegate: NSObject, URLSessionDataDelegate, URLSessionDownloadD
         guard let client = self[downloadTask] as? DownloadClient else { return }
         
         /// Download Block
-        if let downloadBlock = client.downloadCallBack?.block {
-            client.downloadCallBack?.queue.async { downloadBlock(location) }
+        if let url = client.downloadCallBack?() {
+            try? FileManager.default.moveItem(at: location, to: url)
         }
     }
     

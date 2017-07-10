@@ -106,9 +106,9 @@ open class DataClient: Client {
 /// Client for download request
 open class DownloadClient: Client {
     
-    public typealias DownloadBlock = (URL) -> ()
+    public typealias DownloadBlock = () -> URL
     
-    var downloadCallBack: (queue: DispatchQueue, block: DownloadBlock?)?
+    var downloadCallBack: DownloadBlock?
     
     /// Add download block, it will call back when download success to url.
     ///
@@ -117,8 +117,8 @@ open class DownloadClient: Client {
     ///   - block: DownloadBlock
     /// - Returns: Self
     @discardableResult
-    public func receive(queue: DispatchQueue = .main, download block: (DownloadBlock)? = nil) -> Self {
-        self.downloadCallBack = (queue, block)
+    public func receive(download block: (DownloadBlock)? = nil) -> Self {
+        self.downloadCallBack = block
         return self
     }
 }
