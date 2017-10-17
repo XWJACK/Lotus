@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "043DF54C1F64C85200A7CDB7"
-               BuildableName = "Lotus.framework"
-               BlueprintName = "Lotus"
+               BuildableName = "Lotus iOS.framework"
+               BlueprintName = "Lotus iOS"
                ReferencedContainer = "container:Lotus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "043DF5551F64C85200A7CDB7"
-               BuildableName = "LotusTests.xctest"
-               BlueprintName = "LotusTests"
+               BuildableName = "Lotus Tests.xctest"
+               BlueprintName = "Lotus Tests"
                ReferencedContainer = "container:Lotus.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "043DF54C1F64C85200A7CDB7"
-            BuildableName = "Lotus.framework"
-            BlueprintName = "Lotus"
+            BuildableName = "Lotus iOS.framework"
+            BlueprintName = "Lotus iOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,8 +67,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "043DF54C1F64C85200A7CDB7"
-            BuildableName = "Lotus.framework"
-            BlueprintName = "Lotus"
+            BuildableName = "Lotus iOS.framework"
+            BlueprintName = "Lotus iOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "043DF54C1F64C85200A7CDB7"
-            BuildableName = "Lotus.framework"
-            BlueprintName = "Lotus"
+            BuildableName = "Lotus iOS.framework"
+            BlueprintName = "Lotus iOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

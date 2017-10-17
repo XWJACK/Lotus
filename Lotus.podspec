@@ -3,11 +3,12 @@ Pod::Spec.new do |s|
   s.name         = "Lotus"
   s.version      = "1.0.1"
   s.summary      = "Easy Way to Access Network"
-  s.license = 'MIT'
+  s.license 	 = 'MIT'
   s.homepage     = "https://github.com/XWJACK/Lotus"
   s.author       = { "Jack" => "xuwenjiejack@gmail.com" }
 
   s.ios.deployment_target  = "9.0"
+  s.osx.deployment_target = '10.10'
 
   s.source       = { :git => "https://github.com/XWJACK/Lotus.git", :tag => s.version }
 
