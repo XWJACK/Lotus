@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "04D340D11F9629CD0014CE53"
-               BuildableName = "Lotus_macOS.framework"
+               BuildableName = "Lotus.framework"
                BlueprintName = "Lotus macOS"
                ReferencedContainer = "container:Lotus.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04D340D11F9629CD0014CE53"
-            BuildableName = "Lotus_macOS.framework"
+            BuildableName = "Lotus.framework"
             BlueprintName = "Lotus macOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04D340D11F9629CD0014CE53"
-            BuildableName = "Lotus_macOS.framework"
+            BuildableName = "Lotus.framework"
             BlueprintName = "Lotus macOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "04D340D11F9629CD0014CE53"
-            BuildableName = "Lotus_macOS.framework"
+            BuildableName = "Lotus.framework"
             BlueprintName = "Lotus macOS"
             ReferencedContainer = "container:Lotus.xcodeproj">
          </BuildableReference>
