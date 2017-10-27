@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.dependency 'Alamofire', '~> 4.5'
   s.dependency 'SwiftyJSON', '~> 3.1'
 
-  s.preserve_paths = 'Source/modules/CommonCrypto/**/*'
+  s.preserve_paths = 'Modules/CommonCrypto/**/*'
 
   s.pod_target_xcconfig = {
     'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphoneos',
