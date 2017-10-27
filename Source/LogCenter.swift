@@ -43,8 +43,8 @@ open class LogCenter {
     
     /// Initlization.
     ///
-    /// - Parameter logFileName: Log file name, default is **"com.gouhuoapp.log"**.
-    public init(logFileName: String = "com.gouhuoapp.log") {
+    /// - Parameter logFileName: Log file name, default is **"com.lotus.log"**.
+    public init(logFileName: String = "com.lotus.log") {
         logURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(logFileName)
         createLogFile()
     }

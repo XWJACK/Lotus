@@ -20,6 +20,8 @@
 		043DF5861F64C9D300A7CDB7 /* Lotus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF57C1F64C9D300A7CDB7 /* Lotus.swift */; };
 		043DF5871F64C9D300A7CDB7 /* LotusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF57D1F64C9D300A7CDB7 /* LotusError.swift */; };
 		043DF6291F64DB5F00A7CDB7 /* LotusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF6281F64DB5F00A7CDB7 /* LotusTests.swift */; };
+		048D1F861FA2E32B006FDC9F /* CommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D1F851FA2E32B006FDC9F /* CommonCrypto.swift */; };
+		048D1F871FA2E32B006FDC9F /* CommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D1F851FA2E32B006FDC9F /* CommonCrypto.swift */; };
 		04D340DB1F9629CD0014CE53 /* Lotus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D340D21F9629CD0014CE53 /* Lotus.framework */; };
 		04D340E91F962A320014CE53 /* Lotus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF57C1F64C9D300A7CDB7 /* Lotus.swift */; };
 		04D340EA1F962A320014CE53 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DF5751F64C9D300A7CDB7 /* Center.swift */; };
@@ -171,6 +173,7 @@
 		043DF5921F64CBD900A7CDB7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		043DF6281F64DB5F00A7CDB7 /* LotusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotusTests.swift; sourceTree = "<group>"; };
 		043DF62A1F64DB6F00A7CDB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		048D1F851FA2E32B006FDC9F /* CommonCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCrypto.swift; sourceTree = "<group>"; };
 		04D3405B1F95F3930014CE53 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Carthage/Checkouts/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		04D340741F95F39A0014CE53 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = Carthage/Checkouts/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = SOURCE_ROOT; };
 		04D340D21F9629CD0014CE53 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +226,6 @@
 				043DF5671F64C8F500A7CDB7 /* Source */,
 				043DF56C1F64C90800A7CDB7 /* Tests */,
 				043DF54E1F64C85200A7CDB7 /* Products */,
-				04D340F61F962A650014CE53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +245,7 @@
 			children = (
 				043DF57C1F64C9D300A7CDB7 /* Lotus.swift */,
 				043DF5881F64C9D900A7CDB7 /* Core */,
+				048D1F721FA2D964006FDC9F /* Features */,
 				043DF5731F64C93400A7CDB7 /* Supporting Files */,
 			);
 			path = Source;
@@ -282,12 +285,20 @@
 				043DF5771F64C9D300A7CDB7 /* CenterDelegate.swift */,
 				043DF5781F64C9D300A7CDB7 /* Client.swift */,
 				043DF5791F64C9D300A7CDB7 /* ClientDelegate.swift */,
-				043DF57A1F64C9D300A7CDB7 /* DebugCenter.swift */,
-				043DF57B1F64C9D300A7CDB7 /* LogCenter.swift */,
-				043DF5741F64C9D300A7CDB7 /* CacheCenter.swift */,
 				043DF57D1F64C9D300A7CDB7 /* LotusError.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		048D1F721FA2D964006FDC9F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				043DF5741F64C9D300A7CDB7 /* CacheCenter.swift */,
+				043DF57B1F64C9D300A7CDB7 /* LogCenter.swift */,
+				043DF57A1F64C9D300A7CDB7 /* DebugCenter.swift */,
+				048D1F851FA2E32B006FDC9F /* CommonCrypto.swift */,
+			);
+			name = Features;
 			sourceTree = "<group>";
 		};
 		04D3405A1F95F3870014CE53 /* Dependences */ = {
@@ -325,13 +336,6 @@
 				04D3408B1F95F39B0014CE53 /* SwiftyJSON tvOS Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		04D340F61F962A650014CE53 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,6 +638,7 @@
 				043DF5851F64C9D300A7CDB7 /* LogCenter.swift in Sources */,
 				043DF5811F64C9D300A7CDB7 /* CenterDelegate.swift in Sources */,
 				043DF5841F64C9D300A7CDB7 /* DebugCenter.swift in Sources */,
+				048D1F861FA2E32B006FDC9F /* CommonCrypto.swift in Sources */,
 				043DF5861F64C9D300A7CDB7 /* Lotus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +664,7 @@
 				04D340ED1F962A320014CE53 /* Client.swift in Sources */,
 				04D340F01F962A320014CE53 /* LogCenter.swift in Sources */,
 				04D340EC1F962A320014CE53 /* CenterDelegate.swift in Sources */,
+				048D1F871FA2E32B006FDC9F /* CommonCrypto.swift in Sources */,
 				04D340EF1F962A320014CE53 /* DebugCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +829,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xwjack.Lotus;
 				PRODUCT_NAME = Lotus;
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Modules/CommonCrypto/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Modules/CommonCrypto/iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -847,6 +855,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xwjack.Lotus;
 				PRODUCT_NAME = Lotus;
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Modules/CommonCrypto/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Modules/CommonCrypto/iphonesimulator";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -901,6 +911,7 @@
 				PRODUCT_NAME = Lotus;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=macosx*]" = "${SRCROOT}/Modules/CommonCrypto/macosx";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -928,6 +939,7 @@
 				PRODUCT_NAME = Lotus;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=macosx*]" = "${SRCROOT}/Modules/CommonCrypto/macosx";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

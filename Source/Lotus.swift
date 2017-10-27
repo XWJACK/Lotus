@@ -9,17 +9,17 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-//import CommonCrypto
 
 //MARK: - Typealias
 
+//MARK: Alamofire
 public typealias Parameters = Alamofire.Parameters
 public typealias Method = Alamofire.HTTPMethod
 public typealias URLEncoding = Alamofire.URLEncoding
 public typealias URLConvertible = Alamofire.URLConvertible
 public typealias AlamofireError = Alamofire.AFError
 public typealias Headers = Alamofire.HTTPHeaders
-
+//MARK: SwiftyJSON
 public typealias JSON = SwiftyJSON.JSON
 
 //MARK: - Custom for Lotus
@@ -123,27 +123,3 @@ public func send(_ url: URL) -> DataClient {
 public func send(_ request: URLRequest) -> DataClient {
     return Center.default.send(request)
 }
-
-//MARK: - Temp add.
-/*
-extension String {
-    /// MD5
-    ///
-    /// For more information about import C library into Framework:
-    /// http://stackoverflow.com/questions/25248598/importing-commoncrypto-in-a-swift-framework/37125785#37125785 and
-    /// https://github.com/onmyway133/Arcane
-    ///
-    /// - returns: nil `iff` encoding is not utf8
-    public func md5() -> String? {
-        guard let messageData = self.data(using:String.Encoding.utf8) else { return nil }
-        var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
-        
-        _ = digestData.withUnsafeMutableBytes {digestBytes in
-            messageData.withUnsafeBytes {messageBytes in
-                CC_MD5(messageBytes, CC_LONG(messageData.count), digestBytes)
-            }
-        }
-        return digestData.map { String(format: "%02hhx", $0) }.joined()
-    }
-}
-*/

@@ -24,8 +24,8 @@ open class CacheCenter {
     
     /// Initlization
     ///
-    /// - Parameter cacheFolder: Cache folder name, default is **"com.gouhuoapp.api.cache"**
-    public init(cacheFolder: String = "com.gouhuoapp.api.cache") {
+    /// - Parameter cacheFolder: Cache folder name, default is **"com.lotus.cache"**
+    public init(cacheFolder: String = "com.lotus.cache") {
         cachesURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(cacheFolder)
         
         createCacheDirectory()
@@ -56,7 +56,7 @@ open class CacheCenter {
     /// - Parameter key: The raw key to uniquely the cache, defualt is request url.
     /// - Returns: Custom modify the key, the best is make **md5**.
     open func cache(byRawKey key: String) -> String {
-        return key
+        return key.md5() ?? "Error MD5 with \(key)"
     }
     
     /// Clear cache.
