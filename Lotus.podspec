@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Lotus"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Easy way to access network"
   s.license 	   = 'MIT'
   s.homepage     = "https://github.com/XWJACK/Lotus"

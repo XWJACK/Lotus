@@ -410,5 +410,6 @@ Center.default.configuration.LogCenter = CustomLogCenter()
 | ---- | ------- | -------------- |
 | 2017-06-09 | 0.1.0 | 1. Init project |
 | 2017-10-11 | 1.0.1 | 1. Fix crash when create `URLRequest` failed. <br /> 2. Don't send request when an error occur. <br /> 3. Need first debug after log when an error occur. |
+| 2017-10-27 | 1.0.2 | 1. Add MD5 supporting. <br /> 2. Add MIT License. <br /> 3. Fix CocoaPod supporting file. <br /> 4. Add Swift version file. |
 
 
