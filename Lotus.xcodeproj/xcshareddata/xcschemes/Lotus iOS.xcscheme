@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "043DF5551F64C85200A7CDB7"
-               BuildableName = "Lotus Tests.xctest"
-               BlueprintName = "Lotus Tests"
+               BuildableName = "Lotus iOS Tests.xctest"
+               BlueprintName = "Lotus iOS Tests"
                ReferencedContainer = "container:Lotus.xcodeproj">
             </BuildableReference>
          </TestableReference>

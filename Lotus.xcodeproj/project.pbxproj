@@ -157,7 +157,7 @@
 
 /* Begin PBXFileReference section */
 		043DF54D1F64C85200A7CDB7 /* Lotus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lotus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		043DF5561F64C85200A7CDB7 /* Lotus Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lotus Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		043DF5561F64C85200A7CDB7 /* Lotus iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lotus iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		043DF5681F64C8F500A7CDB7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		043DF5691F64C8F500A7CDB7 /* Lotus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lotus.h; sourceTree = "<group>"; };
 		043DF5741F64C9D300A7CDB7 /* CacheCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheCenter.swift; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				043DF54D1F64C85200A7CDB7 /* Lotus.framework */,
-				043DF5561F64C85200A7CDB7 /* Lotus Tests.xctest */,
+				043DF5561F64C85200A7CDB7 /* Lotus iOS Tests.xctest */,
 				04D340D21F9629CD0014CE53 /* Lotus.framework */,
 				04D340DA1F9629CD0014CE53 /* Lotus macOS Tests.xctest */,
 			);
@@ -378,9 +378,9 @@
 			productReference = 043DF54D1F64C85200A7CDB7 /* Lotus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		043DF5551F64C85200A7CDB7 /* Lotus Tests */ = {
+		043DF5551F64C85200A7CDB7 /* Lotus iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 043DF5641F64C85300A7CDB7 /* Build configuration list for PBXNativeTarget "Lotus Tests" */;
+			buildConfigurationList = 043DF5641F64C85300A7CDB7 /* Build configuration list for PBXNativeTarget "Lotus iOS Tests" */;
 			buildPhases = (
 				043DF5521F64C85200A7CDB7 /* Sources */,
 				043DF5531F64C85200A7CDB7 /* Frameworks */,
@@ -391,9 +391,9 @@
 			dependencies = (
 				043DF5591F64C85300A7CDB7 /* PBXTargetDependency */,
 			);
-			name = "Lotus Tests";
+			name = "Lotus iOS Tests";
 			productName = LotusTests;
-			productReference = 043DF5561F64C85200A7CDB7 /* Lotus Tests.xctest */;
+			productReference = 043DF5561F64C85200A7CDB7 /* Lotus iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		04D340D11F9629CD0014CE53 /* Lotus macOS */ = {
@@ -485,7 +485,7 @@
 			projectRoot = "";
 			targets = (
 				043DF54C1F64C85200A7CDB7 /* Lotus iOS */,
-				043DF5551F64C85200A7CDB7 /* Lotus Tests */,
+				043DF5551F64C85200A7CDB7 /* Lotus iOS Tests */,
 				04D340D11F9629CD0014CE53 /* Lotus macOS */,
 				04D340D91F9629CD0014CE53 /* Lotus macOS Tests */,
 			);
@@ -1005,7 +1005,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		043DF5641F64C85300A7CDB7 /* Build configuration list for PBXNativeTarget "Lotus Tests" */ = {
+		043DF5641F64C85300A7CDB7 /* Build configuration list for PBXNativeTarget "Lotus iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				043DF5651F64C85300A7CDB7 /* Debug */,
