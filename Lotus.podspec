@@ -2,8 +2,8 @@ Pod::Spec.new do |s|
 
   s.name         = "Lotus"
   s.version      = "1.0.1"
-  s.summary      = "Easy Way to Access Network"
-  s.license 	 = 'MIT'
+  s.summary      = "Easy way to access network"
+  s.license 	   = 'MIT'
   s.homepage     = "https://github.com/XWJACK/Lotus"
   s.author       = { "Jack" => "xuwenjiejack@gmail.com" }
 
@@ -13,9 +13,17 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/XWJACK/Lotus.git", :tag => s.version }
 
   s.source_files  = ["Source/*.swift"]
-  s.public_header_files = ["Sources/Lotus.h"]
+  s.public_header_files = ["Source/Lotus.h"]
 
   s.requires_arc = true
   s.dependency 'Alamofire', '~> 4.5'
   s.dependency 'SwiftyJSON', '~> 3.1'
+
+  s.preserve_paths = 'Source/modules/CommonCrypto/**/*'
+
+  s.pod_target_xcconfig = {
+    'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphoneos',
+    'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphonesimulator',
+    'SWIFT_INCLUDE_PATHS[sdk=macosx*]'           => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/macosx'
+  }
 end
