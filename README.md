@@ -1,6 +1,5 @@
 # Lotus
 
-![Xcode 8.3+](https://img.shields.io/badge/Xcode-8.3%2B-blue.svg)
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 ![macOS 10.10+](https://img.shields.io/badge/macOS-10.10%2B-blue.svg)
 ![Swift 3.0+](https://img.shields.io/badge/Swift-3.0%2B-orange.svg)
@@ -10,6 +9,11 @@
 ## Overview
 
 Simple way to access network.
+
+- [x] Custom Cache
+- [x] Custom Log
+- [x] Custom Debug
+- [x] MD5 Supporting
 
 ## Dependence
 
