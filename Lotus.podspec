@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
 
   s.name         = "Lotus"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Easy way to access network"
-  s.license 	   = 'MIT'
+  s.license 	 = 'MIT'
   s.homepage     = "https://github.com/XWJACK/Lotus"
   s.author       = { "Jack" => "xuwenjiejack@gmail.com" }
 
@@ -24,5 +24,6 @@ Pod::Spec.new do |s|
     'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphoneos',
     'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphonesimulator',
     'SWIFT_INCLUDE_PATHS[sdk=macosx*]'           => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/macosx'
+    'SWIFT_VERSION'                              => '3.2'
   }
 end
