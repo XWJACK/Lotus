@@ -1,6 +1,0 @@
-osx_image: xcode9
-language: objective-c
-
-script:
-- xcodebuild clean build -project Lotus.xcodeproj -scheme "Lotus iOS"
-- xcodebuild clean build -project Lotus.xcodeproj -scheme "Lotus Mac"

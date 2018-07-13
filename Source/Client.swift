@@ -149,7 +149,7 @@ public final class DataClient: Client {
     /// - Returns: Self
     @discardableResult
     public func receive(queue: DispatchQueue = .main, rawJSON block: ((JSON) -> ())? = nil) -> Self {
-        return receive(queue: queue, success: { block?(JSON(data: $0)) })
+        return receive(queue: queue, success: { block?((try? JSON(data: $0)) ?? JSON()) })
     }
     
     /// Add generic block, it will call back when receive data with no error.

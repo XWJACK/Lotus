@@ -115,7 +115,7 @@ extension ClientDelegate: CustomLogConvertible {
         log.raw["URL"] = response?.url?.absoluteString ?? "Unknow URL"
         log.raw["Response Code"] = response?.statusCode.description ?? "Unknow Status Code"
         log.raw["HTTP Header"] = (response?.allHeaderFields as? [String: String])?.description ?? "Unknow HTTP Header"
-        log.raw["Data"] = data.isEmpty ? "Empty Data" : JSON(data: data).rawString() ?? "Unable To Parse Data"
+        log.raw["Data"] = data.isEmpty ? "Empty Data" : try? JSON(data: data).rawString() ?? "Unable To Parse Data"
         log.raw["Error"] = error?.localizedDescription ?? "No Error"
         return log
     }
