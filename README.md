@@ -2,7 +2,7 @@
 
 ![iOS 8.0+](https://img.shields.io/badge/iOS-8.0%2B-blue.svg)
 ![macOS 10.10+](https://img.shields.io/badge/macOS-10.10%2B-blue.svg)
-![Swift 3.2](https://img.shields.io/badge/Swift-3.2-orange.svg)
+![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg)
 ![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)
 ![pod compatible](https://img.shields.io/badge/pod-compatible-brightgreen.svg)
 
@@ -430,5 +430,6 @@ extension Client: CustomLogConvertible {
 | 2017-10-11 | 1.0.1 | 1. Fix crash when create `URLRequest` failed. <br /> 2. Don't send request when an error occur. <br /> 3. Need first debug after log when an error occur. |
 | 2017-10-27 | 1.0.2 | 1. Add MD5 supporting. <br /> 2. Add MIT License. <br /> 3. Fix CocoaPod supporting file. <br /> 4. Add Swift version file. |
 | 2018-01-18 | 1.0.3 | 1. Modify README. <br /> 2. Update Swift version to 3.2 |
+| 2018-07-13 | 1.0.4 | 1. Update Swift version to 4.1 |
 
 
