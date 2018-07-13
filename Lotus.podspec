@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Lotus"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "Easy way to access network"
   s.license 	 = 'MIT'
   s.homepage     = "https://github.com/XWJACK/Lotus"
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.source_files  = ["Source/*.swift"]
 
   s.requires_arc = true
-  s.dependency 'Alamofire', '~> 4.5'
-  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'Alamofire', '~> 4.7'
+  s.dependency 'SwiftyJSON', '~> 4.0'
 
   s.preserve_paths = 'Modules/CommonCrypto/**/*'
 
@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
     'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphoneos',
     'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/iphonesimulator',
     'SWIFT_INCLUDE_PATHS[sdk=macosx*]'           => '$(PODS_ROOT)/Lotus/Modules/CommonCrypto/macosx'
-    'SWIFT_VERSION'                              => '3.2'
+    'SWIFT_VERSION'                              => '4.1'
   }
 end
