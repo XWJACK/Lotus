@@ -108,15 +108,15 @@ final class DataClientDelegate: ClientDelegate, URLSessionDataDelegate {
 
 extension ClientDelegate: CustomLogConvertible {
     var log: Log {
-        let log = Log()
         let response = task?.response as? HTTPURLResponse
-        log.raw["Task Identifier"] = task?.taskIdentifier.description ?? "Unknow Task Identifier"
-        log.raw["End Time"] = endTime.description
-        log.raw["URL"] = response?.url?.absoluteString ?? "Unknow URL"
-        log.raw["Response Code"] = response?.statusCode.description ?? "Unknow Status Code"
-        log.raw["HTTP Header"] = (response?.allHeaderFields as? [String: String])?.description ?? "Unknow HTTP Header"
-        log.raw["Data"] = data.isEmpty ? "Empty Data" : try? JSON(data: data).rawString() ?? "Unable To Parse Data"
-        log.raw["Error"] = error?.localizedDescription ?? "No Error"
-        return log
+        var raw: [String: String] = [:]
+        raw["Task Identifier"] = task?.taskIdentifier.description ?? "Unknow Task Identifier"
+        raw["End Time"] = endTime.description
+        raw["URL"] = response?.url?.absoluteString ?? "Unknow URL"
+        raw["Response Code"] = response?.statusCode.description ?? "Unknow Status Code"
+        raw["HTTP Header"] = (response?.allHeaderFields as? [String: String])?.description ?? "Unknow HTTP Header"
+        raw["Data"] = data.isEmpty ? "Empty Data" : try? JSON(data: data).rawString() ?? "Unable To Parse Data"
+        raw["Error"] = error?.localizedDescription ?? "No Error"
+        return Log(raw: raw)
     }
 }

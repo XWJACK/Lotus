@@ -14,17 +14,16 @@ public protocol CustomLogConvertible {
 }
 
 /// Custom log struct.
-public final class Log {
+public struct Log {
     /// Raw log formatter.
-    var raw: [String: String] = [:]
+    public let raw: [String: String]
 }
 
 // MARK: - CustomLogConvertible
 
 extension String: CustomLogConvertible {
     public var log: Log {
-        let log = Log()
-        log.raw["Info: "] = self
+        let log = Log(raw: ["Info": self])
         return log
     }
 }
@@ -56,7 +55,6 @@ open class LogCenter {
     ///   - logTime: Recording log time.
     /// - Returns: String formatter, default is separator by **", "** with no data.
     open func save(_ log: Log, witTime logTime: TimeInterval) -> String {
-        log.raw["Data"] = nil
         return logTime.description + ", " + log.raw.values.joined(separator: ", ")
     }
     

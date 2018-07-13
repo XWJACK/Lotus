@@ -216,14 +216,14 @@ open class DownloadClient: Client {
 extension Client: CustomLogConvertible {
     
     open var log: Log {
-        let log = Log()
-        log.raw["Task Identifier"] = delegate.task?.taskIdentifier.description ?? "Unknow Task Identifier"
-        log.raw["Begin Time"] = beginTime.description
-        log.raw["Method"] = request?.httpMethod ?? "Unknow Method"
-        log.raw["URL"] = request?.url?.absoluteString ?? "Unknow URL"
-        log.raw["HTTP Header"] = request?.allHTTPHeaderFields?.description ?? "Unknow HTTP Header"
-        log.raw["HTTP Body"] = request?.httpBody == nil ? "No HTTP Body" : String(data: request!.httpBody!, encoding: .utf8)
-        log.raw["Error"] = error?.localizedDescription ?? "No Error"
-        return log
+        var raw: [String: String] = [:]
+        raw["Task Identifier"] = delegate.task?.taskIdentifier.description ?? "Unknow Task Identifier"
+        raw["Begin Time"] = beginTime.description
+        raw["Method"] = request?.httpMethod ?? "Unknow Method"
+        raw["URL"] = request?.url?.absoluteString ?? "Unknow URL"
+        raw["HTTP Header"] = request?.allHTTPHeaderFields?.description ?? "Unknow HTTP Header"
+        raw["HTTP Body"] = request?.httpBody == nil ? "No HTTP Body" : String(data: request!.httpBody!, encoding: .utf8)
+        raw["Error"] = error?.localizedDescription ?? "No Error"
+        return Log(raw: raw)
     }
 }
