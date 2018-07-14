@@ -225,7 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				043DF5921F64CBD900A7CDB7 /* README.md */,
-				04D3405A1F95F3870014CE53 /* Dependences */,
+				04AE48F120F9B26200F35BFE /* Dependences */,
 				046367F220DDEB02009D2B01 /* Modules */,
 				043DF5671F64C8F500A7CDB7 /* Source */,
 				043DF56C1F64C90800A7CDB7 /* Tests */,
@@ -347,13 +347,13 @@
 			name = Features;
 			sourceTree = "<group>";
 		};
-		04D3405A1F95F3870014CE53 /* Dependences */ = {
+		04AE48F120F9B26200F35BFE /* Dependences */ = {
 			isa = PBXGroup;
 			children = (
 				04D340741F95F39A0014CE53 /* SwiftyJSON.xcodeproj */,
 				04D3405B1F95F3930014CE53 /* Alamofire.xcodeproj */,
 			);
-			path = Dependences;
+			name = Dependences;
 			sourceTree = "<group>";
 		};
 		04D3405C1F95F3930014CE53 /* Products */ = {
@@ -376,7 +376,7 @@
 				04D3407F1F95F39B0014CE53 /* SwiftyJSON.framework */,
 				04D340811F95F39B0014CE53 /* SwiftyJSON iOS Tests.xctest */,
 				04D340831F95F39B0014CE53 /* SwiftyJSON.framework */,
-				04D340851F95F39B0014CE53 /* SwiftyJSON macOS Tests.xctest */,
+				04D340851F95F39B0014CE53 /* SwiftyJSON OSX Tests.xctest */,
 				04D340871F95F39B0014CE53 /* SwiftyJSON.framework */,
 				04D340891F95F39B0014CE53 /* SwiftyJSON.framework */,
 				04D3408B1F95F39B0014CE53 /* SwiftyJSON tvOS Tests.xctest */,
@@ -609,10 +609,10 @@
 			remoteRef = 04D340821F95F39B0014CE53 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		04D340851F95F39B0014CE53 /* SwiftyJSON macOS Tests.xctest */ = {
+		04D340851F95F39B0014CE53 /* SwiftyJSON OSX Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "SwiftyJSON macOS Tests.xctest";
+			path = "SwiftyJSON OSX Tests.xctest";
 			remoteRef = 04D340841F95F39B0014CE53 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
