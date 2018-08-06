@@ -149,8 +149,15 @@ public final class DataClient: Client {
     ///   - block: JSON block
     /// - Returns: Self
     @discardableResult
-    public func receive(queue: DispatchQueue = .main, rawJSON block: ((JSON) -> ())? = nil) -> Self {
-        return receive(queue: queue, success: { block?((try? JSON(data: $0)) ?? JSON()) })
+    public func receive(queue: DispatchQueue = .main, rawJSON block: ((AbstractJSONResult) -> ())? = nil) -> Self {
+        return receive(queue: queue, success: {
+            /// Check and
+            guard JSONSerialization.isValidJSONObject($0),
+                let jsonObject = (try? JSONSerialization.jsonObject(with: $0, options: .allowFragments)) as? AbstractJSONResult
+            else { block?([:]); return }
+            
+            block?(jsonObject)
+        })
     }
     
     /// Add generic block, it will call back when receive data with no error.
@@ -160,15 +167,19 @@ public final class DataClient: Client {
     ///   - block: Generic block
     /// - Returns: Self
     @discardableResult
-    public func receive<T: ResultConversion>(queue: DispatchQueue = .main, generic block: ((T) -> ())? = nil) -> Self {
+    public func receive<T: ResultConversion>(queue: DispatchQueue = .main, generic block: ((T?) -> ())? = nil) -> Self {
         return receive(queue: queue, rawJSON: { [weak self] in
-            
-            if let error = T.result.error($0), let failedBlock = self?.failedCallBack?.block {
+            /// Error handling.
+            if let error = T.error($0), let failedBlock = self?.failedCallBack?.block {
                 self?.failedCallBack?.queue.async { failedBlock(LotusError.customError(error)) }
                 return
             }
+            /// Parse AbstractJSONResult to T
+            guard let data = try? JSONSerialization.data(withJSONObject: T.data, options: .prettyPrinted),
+                let object = try? JSONDecoder().decode(T.self, from: data)
+            else { block?(nil); return }
             
-            block?(T(json: T.result.data($0)))
+            block?(object)
         })
     }
     
@@ -182,12 +193,16 @@ public final class DataClient: Client {
     public func receive<T: ResultConversion>(queue: DispatchQueue = .main, genericArray block: (([T]) -> ())? = nil) -> Self {
         return receive(queue: queue, rawJSON: { [weak self] in
             
-            if let error = T.result.error($0), let failedBlock = self?.failedCallBack?.block {
+            if let error = T.error($0), let failedBlock = self?.failedCallBack?.block {
                 self?.failedCallBack?.queue.async { failedBlock(LotusError.customError(error)) }
                 return
             }
+            /// Parse AbstractJSONResult to T
+            guard let data = try? JSONSerialization.data(withJSONObject: T.data, options: .prettyPrinted),
+                let objects = try? JSONDecoder().decode([T].self, from: data)
+                else { block?([]); return }
             
-            block?(T.result.data($0).arrayValue.map{ T(json: $0) })
+            block?(objects)
         })
     }
 }

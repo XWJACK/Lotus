@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 //MARK: - Custom for Lotus
 
@@ -48,21 +47,8 @@ public struct Request {
     }
 }
 
-/// Struct for result
-open class Result {
-    
-    /// Custom parse data, default is in "data"
-    open var data: (JSON) -> JSON
-    /// Custom error for failed call back, default is always no error.
-    open var error: (JSON) -> Error?
-    
-    /// Struct for result
-    public init(data: @escaping (JSON) -> JSON = { $0["data"] },
-                error: @escaping (JSON) -> Error? = { _ in nil }) {
-        self.data = data
-        self.error = error
-    }
-}
+/// Abstract JSON Result
+public typealias AbstractJSONResult = Dictionary<String, Any>
 
 /// Confirm this protocol to conversion any type to RequestStruct.
 public protocol RequestConversion {
@@ -71,16 +57,17 @@ public protocol RequestConversion {
 }
 
 /// Confirm this protocol to conversion data to any type.
-public protocol ResultConversion {
-    /// Result parse.
-    static var result: Result { get }
-    /// Result adapter
-    init(json: JSON)
+public protocol ResultConversion: Decodable {
+    /// Custom parse data, default is current
+    static var data: (AbstractJSONResult) -> AbstractJSONResult { get }
+    /// Custom error for failed call back, default is always no error.
+    static var error: (AbstractJSONResult) -> Error? { get }
 }
 
-// Given default.
+// Given default for ResultConversion.
 public extension ResultConversion {
-    static var result: Result { return Result() }
+    static var data: (AbstractJSONResult) -> AbstractJSONResult { return { $0 } }
+    static var error: (AbstractJSONResult) -> Error? { return { _ in nil } }
 }
 
 //MARK: - Public function
