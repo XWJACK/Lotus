@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 /// Client delegate.
 class ClientDelegate: NSObject, URLSessionTaskDelegate {
@@ -61,9 +62,9 @@ class ClientDelegate: NSObject, URLSessionTaskDelegate {
                 client.successCallBack?.queue.async { successBlock(self.data) }
             }
             
-            if client.isCache {
-                cacheCenter?.save(data: self.data.isEmpty ? nil : self.data, withKey: task.response?.url?.absoluteString ?? "Error URL Cache Key")
-            }
+//            if client.isCache {
+//                cacheCenter?.save(data: self.data.isEmpty ? nil : self.data, withKey: task.response?.url?.absoluteString ?? "Error URL Cache Key")
+//            }
         }
         
         /// Response

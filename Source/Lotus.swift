@@ -10,18 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-//MARK: - Typealias
-
-//MARK: Alamofire
-public typealias Parameters = Alamofire.Parameters
-public typealias Method = Alamofire.HTTPMethod
-public typealias URLEncoding = Alamofire.URLEncoding
-public typealias URLConvertible = Alamofire.URLConvertible
-public typealias AlamofireError = Alamofire.AFError
-public typealias Headers = Alamofire.HTTPHeaders
-//MARK: SwiftyJSON
-public typealias JSON = SwiftyJSON.JSON
-
 //MARK: - Custom for Lotus
 
 /// Struct for request.
@@ -32,11 +20,11 @@ public struct Request {
     /// Parameters for request.
     public let parameters: Parameters?
     /// Method for request.
-    public let method: Method
+    public let method: HTTPMethod
     /// Encoding for request.
     public let encoding: URLEncoding
     /// HTTP Headers
-    public let headers: Headers?
+    public let headers: HTTPHeaders?
     
     /// Request struct
     ///
@@ -48,9 +36,9 @@ public struct Request {
     ///   - headers: HTTP Header for request, default is nil.
     public init(path: String,
                 parameters: Parameters? = nil,
-                method: Method = .get,
+                method: HTTPMethod = .get,
                 encoding: URLEncoding = .default,
-                headers: Headers? = nil) {
+                headers: HTTPHeaders? = nil) {
         
         self.path = path
         self.method = method

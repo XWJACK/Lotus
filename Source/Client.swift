@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 /// Base client for request
 public class Client {
@@ -26,8 +27,8 @@ public class Client {
     final let error: Error?
     /// Begin request time.
     final var beginTime: TimeInterval = 0
-    /// Is cache response data.
-    final internal(set) var isCache: Bool = false
+//    /// Is cache response data.
+//    final internal(set) var isCache: Bool = false
     
     final var successCallBack: (queue: DispatchQueue, block: SuccessBlock?)?
     final var progressCallBack: (queue: DispatchQueue, block: ProgressBlock?)?
@@ -60,18 +61,18 @@ public class Client {
         beginTime = Date().timeIntervalSince1970
     }
     
-    /// Reading and saving cache. **Must after success block**.
-    ///
-    /// - Parameter isCache: Is need cached.
-    public func cache(_ isCache: Bool = true) {
-        self.isCache = isCache
-        guard isCache else { return }
-        cacheCenter?.read(dataByKey: request?.url?.absoluteString ?? "Error URL Cache Key", completed: { (data) in
-            if let queue = self.successCallBack?.queue {
-                queue.async { self.successCallBack?.block?(data) }
-            }
-        })
-    }
+//    /// Reading and saving cache. **Must after success block**.
+//    ///
+//    /// - Parameter isCache: Is need cached.
+//    public func cache(_ isCache: Bool = true) {
+//        self.isCache = isCache
+//        guard isCache else { return }
+//        cacheCenter?.read(dataByKey: request?.url?.absoluteString ?? "Error URL Cache Key", completed: { (data) in
+//            if let queue = self.successCallBack?.queue {
+//                queue.async { self.successCallBack?.block?(data) }
+//            }
+//        })
+//    }
     
     /// Add success block, it will call back when received response with no error.
     ///

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 /// Center for all request
 public class Center {
@@ -56,7 +57,7 @@ public class Center {
             let url = try configuration.host().asURL().appendingPathComponent(router.request.path)
             
             /// Getting http headers for all session.
-            var headers: Headers = configuration.headers?() ?? [:]
+            var headers: HTTPHeaders = configuration.headers?() ?? [:]
             /// Add custom each request headers.
             router.request.headers?.forEach{ headers[$0.key] = $0.value }
             

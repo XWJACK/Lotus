@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 /// Configuration for Center.
 public class CenterConfiguration {
@@ -15,7 +16,7 @@ public class CenterConfiguration {
     public var host: (() -> URLConvertible) = { return "" }
     
     /// Custom global http headers, default is nil.
-    public var headers: (() -> Headers)? = nil
+    public var headers: (() -> HTTPHeaders)? = nil
     
     /// System url session configuration.
     public let sessionConfiguration: URLSessionConfiguration
